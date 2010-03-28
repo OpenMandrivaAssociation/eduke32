@@ -3,7 +3,7 @@
 License:	GNU GPL v2
 Name:		eduke32
 Version:	2.0.0svn20100115
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Games/Arcade
 URL:	http://www.eduke32.com/
 Source0:	%{name}-%{version}.tar.bz2
@@ -15,7 +15,7 @@ Source5:	%{name}.desktop
 Source6:	%{name}-demo-install.sh
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 Summary:	Source port of Duke Nukem 3D
-Requires:	SDL SDL_mixer eduke32_engine = %{version}-%{release}
+Requires:	eduke32_engine = %{version}-%{release}
 
 BuildRequires:	SDL-devel SDL_mixer-devel nasm
 BuildRequires:  libvorbis-devel gtk2-devel
