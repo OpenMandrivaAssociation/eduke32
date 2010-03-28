@@ -97,11 +97,23 @@ install -Dm 0644 %{name}_64x64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/a
 install -Dm 0644 %{name}_128x128.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
 
 mkdir %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-gui.desktop << EOF
 [Desktop Entry]
 Name=Duke Nukem 3D
 Comment=%{Summary}
-Exec=%{_gamesbindir}/%{name}
+Exec=%{_gamesbindir}/%{name}-gui
+Icon=%{name}
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+EOF
+
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-console.desktop << EOF
+[Desktop Entry]
+Name=Duke Nukem 3D
+Comment=%{Summary}
+Exec=%{_gamesbindir}/%{name}-console
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -152,17 +164,20 @@ fi
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
 %{_datadir}/icons/hicolor/64x64/apps/%{name}.png
 %{_datadir}/icons/hicolor/128x128/apps/%{name}.png
-%{_datadir}/applications/mandriva-%{name}.desktop
 
 %files console
 %defattr(-,root,root,-)
 %ghost %{_gamesbindir}/%{name}
 %attr(-,root,root) %{_gamesbindir}/%{name}-console
+%{_datadir}/applications/mandriva-%{name}-console.desktop
+
 
 %files gui
 %defattr(-,root,root,-)
 %ghost %{_gamesbindir}/%{name}
 %attr(-,root,root) %{_gamesbindir}/%{name}-gui
+%{_datadir}/applications/mandriva-%{name}-gui.desktop
+
 
 # both versions of editor are packed but only GUI one is preffered but can be changed
 # with use of update-alternatives
