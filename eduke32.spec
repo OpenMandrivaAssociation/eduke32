@@ -150,7 +150,7 @@ fi
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
 %{_datadir}/icons/hicolor/64x64/apps/%{name}.png
 %{_datadir}/icons/hicolor/128x128/apps/%{name}.png
-# %{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/mandriva-%{name}.desktop
 
 %files console
 %defattr(-,root,root,-)
