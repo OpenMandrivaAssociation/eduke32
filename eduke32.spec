@@ -3,7 +3,7 @@
 License:	GNU GPL v2
 Name:		eduke32
 Version:	2.0.0svn20100115
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Games/Arcade
 URL:	http://www.eduke32.com/
 Source0:	%{name}-%{version}.tar.bz2
@@ -100,25 +100,25 @@ mkdir %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-gui.desktop << EOF
 [Desktop Entry]
 Name=Duke Nukem 3D
-Comment=%{Summary}
+Comment=%{summary}
 Exec=%{_gamesbindir}/%{name}-gui
 Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame;
 EOF
 
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-console.desktop << EOF
 [Desktop Entry]
 Name=Duke Nukem 3D
-Comment=%{Summary}
+Comment=%{summary}
 Exec=%{_gamesbindir}/%{name}-console
 Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame;
 EOF
 
 
