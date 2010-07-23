@@ -1,8 +1,8 @@
 
-License:	GNU GPL v2
+License:	GPLv2
 Name:		eduke32
 Version:	2.0.1svn20100719
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Games/Arcade
 URL:	http://www.eduke32.com/
 Source0:	%{name}-%{version}.tar.bz2
@@ -98,8 +98,8 @@ install -Dm 0644 %{name}_128x128.png %{buildroot}%{_datadir}/icons/hicolor/128x1
 mkdir %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-gui.desktop << EOF
 [Desktop Entry]
-Name=Duke Nukem 3D
-Comment=%{Summary}
+Name=Duke Nukem 3D GUI
+Comment=Eduke32 GUI game
 Exec=%{_gamesbindir}/%{name}-gui
 Icon=%{name}
 Terminal=false
@@ -110,8 +110,8 @@ EOF
 
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-console.desktop << EOF
 [Desktop Entry]
-Name=Duke Nukem 3D
-Comment=%{Summary}
+Name=Duke Nukem 3D Console
+Comment=Eduke32 Console game
 Exec=%{_gamesbindir}/%{name}-console
 Icon=%{name}
 Terminal=false
@@ -188,38 +188,3 @@ fi
 
 %clean
 rm -rf %{buildroot}
-
-
-
-%changelog
-* Sun Mar 28 2010 Zombie Ryushu <ryushu@mandriva.org> 2.0.0svn20100115-2mdv2010.1
-+ Revision: 528425
-- Fix dependencies
-
-* Sun Mar 28 2010 Zombie Ryushu <ryushu@mandriva.org> 2.0.0svn20100115-1mdv2010.1
-+ Revision: 528306
-- Fix the Desktop file creation
-- Fix the Desktop file creation
-- Fix the Desktop file creation
-- import eduke32
-
-
-* Tue Jan 19 2010 boris@steki.net
-- Added demo files installation script called
-  eduke32-demo-install which will download package
-  extract it and show its license to user and force
-  him to accept terms within
-* Tue Jan 19 2010 boris@steki.net
-- Added obsolete tag in spec file for removing -common
-  package on upgrade
-* Mon Jan 18 2010 boris@steki.net
-- Removed -common package as it was unnecessary and
-  was just confusing
-* Sat Jan 16 2010 boris@steki.net
-- Added Desktop integration files and icons
-* Sat Jan 16 2010 boris@steki.net
-- Packages for gui,console and mapeditor are created
-  so now it can be selected on install or after can
-  be changed with use of update-alternatives
-* Fri Jan 15 2010 boris@steki.net
-- Created inital rpm package from svn export
