@@ -1,8 +1,8 @@
 
 License:	GPLv2
 Name:		eduke32
-Version:	2.0.1svn20100719
-Release:	%mkrel 3
+Version:	2.0.1svn20100813
+Release:	%mkrel 4
 Group:		Games/Arcade
 URL:	http://www.eduke32.com/
 Source0:	%{name}-%{version}.tar.bz2
@@ -52,6 +52,14 @@ Requires:	update-alternatives
 %description mapeditor
 Eduke32 maps editor based on BUILD engine
 
+%package utils
+Group:          Games/Arcade
+Summary:        Eduke32 map editor
+Requires:	SDL
+
+%description utils
+Eduke32 build tools
+
 %prep
 %setup -q
 cp %{S:1} .
@@ -60,6 +68,7 @@ cp %{S:3} .
 cp %{S:4} .
 cp %{S:5} .
 cp %{S:6} .
+
 %build
 make HAVE_GTK2=1 RELEASE=1 %{?jobs:-j%jobs}
 mv %{name} %{name}-gui
@@ -70,7 +79,9 @@ mv %{name} %{name}-console
 mv mapster32 mapster32-console
 touch %{name}
 touch mapster32
-
+cd build
+make utils
+cd ..
 
 %install 
 rm -rf %{buildroot}
@@ -94,6 +105,12 @@ install -Dm 0644 %{name}_32x32.png %{buildroot}%{_datadir}/icons/hicolor/32x32/a
 install -Dm 0644 %{name}_48x48.png %{buildroot}%{_datadir}/icons/hicolor/48x48/apps/%{name}.png
 install -Dm 0644 %{name}_64x64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
 install -Dm 0644 %{name}_128x128.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
+# utils
+install -Dm 0755 build/kextract %{buildroot}%{_bindir}/kextract
+install -Dm 0755 build/kgroup %{buildroot}%{_bindir}/kgroup
+install -Dm 0755 build/transpal %{buildroot}%{_bindir}/transpal
+install -Dm 0755 build/wad2art %{buildroot}%{_bindir}/wad2art
+install -Dm 0755 build/wad2map %{buildroot}%{_bindir}/wad2map
 
 mkdir %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-gui.desktop << EOF
@@ -119,7 +136,6 @@ Type=Application
 StartupNotify=true
 Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
 EOF
-
 
 
 %post gui
@@ -170,13 +186,11 @@ fi
 %attr(-,root,root) %{_gamesbindir}/%{name}-console
 %{_datadir}/applications/mandriva-%{name}-console.desktop
 
-
 %files gui
 %defattr(-,root,root,-)
 %ghost %{_gamesbindir}/%{name}
 %attr(-,root,root) %{_gamesbindir}/%{name}-gui
 %{_datadir}/applications/mandriva-%{name}-gui.desktop
-
 
 # both versions of editor are packed but only GUI one is preffered but can be changed
 # with use of update-alternatives
@@ -185,6 +199,14 @@ fi
 %ghost %{_gamesbindir}/mapster32
 %attr(-,root,root) %{_gamesbindir}/mapster32-gui
 %attr(-,root,root) %{_gamesbindir}/mapster32-console
+
+%files utils
+%defattr(-,root,root,-)
+%{_bindir}/kextract
+%{_bindir}/kgroup
+%{_bindir}/transpal
+%{_bindir}/wad2art
+%{_bindir}/wad2map
 
 %clean
 rm -rf %{buildroot}
