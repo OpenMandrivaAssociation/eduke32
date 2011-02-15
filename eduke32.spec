@@ -1,7 +1,7 @@
 
 License:	GPLv2
 Name:		eduke32
-Version:	2.0.1svn20100813
+Version:	2.0.2svn20110213
 Release:	%mkrel 4
 Group:		Games/Arcade
 URL:	http://www.eduke32.com/
