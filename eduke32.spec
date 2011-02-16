@@ -54,7 +54,7 @@ Eduke32 maps editor based on BUILD engine
 
 %package utils
 Group:          Games/Arcade
-Summary:        Eduke32 map editor
+Summary:        Eduke32 build tools
 Requires:	SDL
 
 %description utils
