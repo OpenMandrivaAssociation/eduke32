@@ -17,7 +17,7 @@ Summary:	Source port of Duke Nukem 3D
 Requires:	eduke32_engine = %{version}-%{release}
 
 BuildRequires:	SDL-devel SDL_mixer-devel nasm gcc-c++
-BuildRequires:  libvorbis-devel gtk2-devel
+BuildRequires:  libvorbis-devel gtk2-devel libstdc++
 
 %description
 EDuke32 is a source port of the classic PC first person shooter Duke Nukem 3D - Duke3D for short 
