@@ -81,6 +81,7 @@ mv mapster32 mapster32-console
 touch %{name}
 touch mapster32
 cd build
+make veryclean
 make utils
 cd ..
 
