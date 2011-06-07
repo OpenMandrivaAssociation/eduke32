@@ -70,6 +70,7 @@ cp %{S:5} .
 cp %{S:6} .
 
 %build
+make veryclean
 make HAVE_GTK2=1 RELEASE=1 %{?jobs:-j%jobs}
 mv %{name} %{name}-gui
 mv mapster32 mapster32-gui
