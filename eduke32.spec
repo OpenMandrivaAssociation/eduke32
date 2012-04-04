@@ -17,7 +17,7 @@ Requires:	eduke32_engine = %{version}-%{release}
 
 BuildRequires:	SDL-devel SDL_mixer-devel nasm gcc-c++
 BuildRequires:  libvorbis-devel gtk2-devel libstdc++ shared-mime-info libgio2.0_0
-BuildRequires:  libstdc++-static-devel libvpx-devel libgdk_pixbuf2.0_0-devel
+BuildRequires:  libstdc++-static-devel libvpx-devel libgdk_pixbuf2.0_0-devel gdk-pixbuf-loaders
 
 
 %description
