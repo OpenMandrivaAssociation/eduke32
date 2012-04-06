@@ -16,7 +16,7 @@ Summary:	Source port of Duke Nukem 3D
 Requires:	eduke32_engine = %{version}-%{release}
 
 BuildRequires:	SDL-devel SDL_mixer-devel nasm gcc-c++
-BuildRequires:  libvorbis-devel gtk2-devel libstdc++ shared-mime-info
+BuildRequires:  libvorbis-devel gtk2-devel libstdc++ shared-mime-info libxrender-devel
 BuildRequires:  libstdc++-static-devel libvpx-devel gdk-pixbuf-loaders
 
 
