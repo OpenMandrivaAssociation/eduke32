@@ -1,7 +1,7 @@
-%define svndate 20120701
-%define sversion 2800
+%define svndate 20120704
+%define sversion 2804
 
-License:	GPLv2
+License:	GPL
 Name:		eduke32
 Version:	2.0.4svn%{sversion}
 Release:	%mkrel 0.1
@@ -19,15 +19,12 @@ Summary:	Source port of Duke Nukem 3D
 Requires:	eduke32_engine = %{version}-%{release}
 
 BuildRequires:	SDL-devel SDL_mixer-devel nasm gcc-c++
-BuildRequires:  libvorbis-devel gtk2-devel libstdc++ shared-mime-info libxrender-devel
-BuildRequires:  libstdc++-static-devel libvpx-devel gdk-pixbuf-loaders
+BuildRequires:	libvorbis-devel gtk2-devel libstdc++ shared-mime-info libxrender-devel
+BuildRequires:	libstdc++-static-devel libvpx-devel gdk-pixbuf-loaders
 
 
 %description
-EDuke32 is a source port of the classic PC first person shooter Duke Nukem 3D - Duke3D for short 
-to Windows, Linux and OS X, which adds a ton of awesome features and 
-upgrades for regular players and an arsenal of editing functions and
-scripting extensions for mod authors and map makers.
+EDuke32 is a source port of the classic PC first person shooter Duke Nukem 3D
 
 This game is non-free because it requires non-free data to function.
 %package gui
@@ -57,8 +54,8 @@ Requires:	update-alternatives
 Eduke32 maps editor based on BUILD engine
 
 %package utils
-Group:          Games/Arcade
-Summary:        Eduke32 build tools
+Group:		Games/Arcade
+Summary:	Eduke32 build tools
 Requires:	SDL
 
 %description utils
@@ -106,7 +103,7 @@ install -Dm 0755 %{name}-console %{buildroot}%{_gamesbindir}/%{name}-console
 install -Dm 0644 SEHELP.HLP %{buildroot}%{_gamesdatadir}/%{name}/sehelp.hlp
 install -Dm 0644 STHELP.HLP %{buildroot}%{_gamesdatadir}/%{name}/sthelp.hlp
 install -Dm 0644 m32help.hlp %{buildroot}%{_gamesdatadir}/%{name}/m32help.hlp
-# install -Dm 0644 tiles.cfg %{buildroot}%{_gamesdatadir}/%{name}/tiles.cfg
+
 install -Dm 0644 %{name}_32x32.png %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/%{name}.png
 install -Dm 0644 %{name}_48x48.png %{buildroot}%{_datadir}/icons/hicolor/48x48/apps/%{name}.png
 install -Dm 0644 %{name}_64x64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
@@ -179,7 +176,7 @@ fi
 %{_gamesdatadir}/%{name}/m32help.hlp
 %{_gamesdatadir}/%{name}/sehelp.hlp
 %{_gamesdatadir}/%{name}/sthelp.hlp
-# %{_gamesdatadir}/%{name}/tiles.cfg
+
 %doc ChangeLog.html ChangeLog buildlic.txt
 %{_datadir}/icons/hicolor/32x32/apps/%{name}.png
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
@@ -188,7 +185,7 @@ fi
 
 %files console
 %defattr(-,root,root,-)
-%ghost %{_gamesbindir}/%{name}
+# %ghost %{_gamesbindir}/%{name}
 %attr(-,root,root) %{_gamesbindir}/%{name}-console
 %{_datadir}/applications/mandriva-%{name}-console.desktop
 
