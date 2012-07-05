@@ -1,10 +1,13 @@
+%define svndate 20120701
+%define sversion 2800
+
 License:	GPLv2
 Name:		eduke32
-Version:	2.0.3svn20120331
-Release:	%mkrel 1.1
+Version:	2.0.4svn%{sversion}
+Release:	%mkrel 0.1
 Group:		Games/Arcade
 URL:	http://www.eduke32.com/
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}_src_%{svndate}-%{sversion}.tar.bz2
 Source1:	%{name}_32x32.png
 Source2:	%{name}_48x48.png
 Source3:	%{name}_64x64.png
@@ -62,7 +65,7 @@ Requires:	SDL
 Eduke32 build tools
 
 %prep
-%setup -q
+%setup -q -n %{name}_%{svndate}-%{sversion}
 cp %{S:1} .
 cp %{S:2} .
 cp %{S:3} .
