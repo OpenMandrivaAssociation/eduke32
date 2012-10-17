@@ -1,5 +1,5 @@
-%define svndate 20120704
-%define sversion 2804
+%define svndate 20121016
+%define sversion 3089
 
 License:	GPL
 Name:		eduke32
