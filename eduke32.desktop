@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+
+Name=EDuke32
+
+Comment=Enhanched Duke Nukem 3D Source port engine
+
+Type=Application
+Categories=Application;Game;ArcadeGame;
+
+TryExec=eduke32
+Exec=eduke32
+
+Icon=eduke32
+Terminal=false

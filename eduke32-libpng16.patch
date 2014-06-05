@@ -1,0 +1,20 @@
+--- build/src/engine.c~	2012-12-17 03:18:18.000000000 +0800
++++ build/src/engine.c	2013-06-09 12:08:00.767857603 +0800
+@@ -15990,7 +15990,7 @@
+         png_set_filter(png_ptr, PNG_FILTER_TYPE_BASE, PNG_FILTER_VALUE_NONE);
+ 
+     if (!HICOLOR)
+-        palette = (png_colorp)png_malloc(png_ptr, 256*png_sizeof(png_color));
++        palette = (png_colorp)png_malloc(png_ptr, 256*sizeof(png_color));
+ 
+     if (palette)
+     {
+@@ -16007,7 +16007,7 @@
+ //    png_set_gAMA(png_ptr, info_ptr, vid_gamma);  // 1.0/vid_gamma ?
+ //    png_set_sRGB(png_ptr, info_ptr, PNG_sRGB_INTENT_SATURATION);  // hm...
+ 
+-    text = (png_textp)png_malloc(png_ptr, 2*png_sizeof(png_text));
++    text = (png_textp)png_malloc(png_ptr, 2*sizeof(png_text));
+     text[0].compression = PNG_TEXT_COMPRESSION_NONE;
+     text[0].key = "Title";
+     text[0].text = (png_charp)(editstatus ? "Mapster32 screenshot" : "EDuke32 screenshot");
