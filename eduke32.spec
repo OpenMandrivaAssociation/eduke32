@@ -16,7 +16,6 @@ Source4:	%{name}_128x128.png
 Source5:	%{name}.desktop
 Source6:	%{name}-demo-install.sh
 Patch0:		eduke32-libpng16.patch
-BuildRequires:	gdk-pixbuf-loaders
 BuildRequires:	nasm
 BuildRequires:	libstdc++-static-devel
 BuildRequires:	pkgconfig(gl)
@@ -153,18 +152,19 @@ cp %{SOURCE6} .
 
 %build
 make veryclean
-%make HAVE_GTK2=1 RELEASE=1
+%make HAVE_GTK2=1 RELEASE=1 BASECFLAGS="%{optflags}" BASEASFLAGS="" BASELDFLAGS="%{ldflags}"
 mv %{name} %{name}-gui
 mv mapster32 mapster32-gui
 make veryclean
-make HAVE_GTK2=0 RELEASE=1
+
+make HAVE_GTK2=0 RELEASE=1 BASECFLAGS="%{optflags}" BASEASFLAGS="" BASELDFLAGS="%{ldflags}"
 mv %{name} %{name}-console
 mv mapster32 mapster32-console
 touch %{name}
 touch mapster32
 cd build
 make veryclean
-make utils
+make utils RELEASE=1 BASECFLAGS="%{optflags}" BASEASFLAGS="" BASELDFLAGS="%{ldflags}"
 cd ..
 
 %install
