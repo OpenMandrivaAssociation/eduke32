@@ -4,7 +4,7 @@
 Summary:	Source port of Duke Nukem 3D
 Name:		eduke32
 Version:	2.0.4svn%{sversion}
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://www.eduke32.com/
