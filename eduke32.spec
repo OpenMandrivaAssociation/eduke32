@@ -1,6 +1,7 @@
 %define svndate 20220119
 %define sversion 9949
 %define debug_package %{nil}
+%define _empty_manifest_terminate_build 0
 
 Summary:	Source port of Duke Nukem 3D
 Name:		eduke32
