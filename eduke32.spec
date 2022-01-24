@@ -19,6 +19,8 @@ Source6:	%{name}-demo-install.sh
 #Patch0:		eduke32-libpng16.patch
 BuildRequires:	nasm
 BuildRequires:	libstdc++-static-devel
+BuildRequires:	atomic-devel
+BuildRequires:	%{_lib}atomic-static-devel
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(gl)
