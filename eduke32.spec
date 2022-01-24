@@ -20,6 +20,7 @@ Source6:	%{name}-demo-install.sh
 BuildRequires:	nasm
 BuildRequires:	libstdc++-static-devel
 BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(glu)
 BuildRequires:	pkgconfig(gtk+-2.0)
