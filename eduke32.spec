@@ -39,7 +39,6 @@ EDuke32 is a source port of the classic PC first person shooter Duke Nukem 3D.
 This game is non-free because it requires non-free data to function.
 
 %files
-%doc ChangeLog.html ChangeLog build/buildlic.txt
 %{_gamesbindir}/%{name}-demo-install
 %dir %{_gamesdatadir}/%{name}/
 %{_gamesdatadir}/%{name}/m32help.hlp
