@@ -1,29 +1,30 @@
-%define svndate 20121217
-%define sversion 3303
+%define svndate 20220119
+%define sversion 9949
 %define debug_package %{nil}
 
 Summary:	Source port of Duke Nukem 3D
 Name:		eduke32
-Version:	2.0.4svn%{sversion}
-Release:	5
+Version:	2.0.4svn%{svndate}
+Release:	1
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://www.eduke32.com/
-Source0:	%{name}_src_%{svndate}-%{sversion}.tar.bz2
+Source0:	https://dukeworld.com/eduke32/synthesis/latest/eduke32_src_%{svndate}-%{sversion}-cba220b0d.tar.xz
 Source1:	%{name}_32x32.png
 Source2:	%{name}_48x48.png
 Source3:	%{name}_64x64.png
 Source4:	%{name}_128x128.png
 Source5:	%{name}.desktop
 Source6:	%{name}-demo-install.sh
-Patch0:		eduke32-libpng16.patch
+#Patch0:		eduke32-libpng16.patch
 BuildRequires:	nasm
 BuildRequires:	libstdc++-static-devel
+BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(glu)
 BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	pkgconfig(sdl)
-BuildRequires:	pkgconfig(SDL_mixer)
+BuildRequires:	pkgconfig(sdl2)
+BuildRequires:	pkgconfig(SDL2_mixer)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(vpx)
 BuildRequires:	pkgconfig(xrender)
@@ -142,8 +143,7 @@ Eduke32 build tools.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}_%{svndate}-%{sversion}
-%patch0 -p0
+%setup -q -n %{name}_%{svndate}-%{sversion}-cba220b0d
 cp %{SOURCE1} .
 cp %{SOURCE2} .
 cp %{SOURCE3} .
