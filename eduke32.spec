@@ -1,5 +1,5 @@
-%define svndate 20220119
-%define sversion 9949
+%define svndate 20220909
+%define sversion 10156
 #define debug_package %{nil}
 %define _empty_manifest_terminate_build 0
 
@@ -10,7 +10,7 @@ Release:	1
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://www.eduke32.com/
-Source0:	https://dukeworld.com/eduke32/synthesis/latest/eduke32_src_%{svndate}-%{sversion}-cba220b0d.tar.xz
+Source0:	https://dukeworld.com/eduke32/synthesis/latest/eduke32_src_%{svndate}-%{sversion}-b041aee19.tar.xz
 Source1:	%{name}_32x32.png
 Source2:	%{name}_48x48.png
 Source3:	%{name}_64x64.png
@@ -146,7 +146,7 @@ Eduke32 build tools.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}_%{svndate}-%{sversion}-cba220b0d
+%setup -q -n %{name}_%{svndate}-%{sversion}-b041aee19
 cp %{SOURCE1} .
 cp %{SOURCE2} .
 cp %{SOURCE3} .
