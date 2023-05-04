@@ -1,7 +1,9 @@
-%define svndate 20220909
-%define sversion 10156
-#define debug_package %{nil}
-%define _empty_manifest_terminate_build 0
+%define svndate 20230405
+%define sversion 10212
+%define git 6537106e6
+
+# Broken build system
+%undefine _debugsource_packages
 
 Summary:	Source port of Duke Nukem 3D
 Name:		eduke32
@@ -10,7 +12,7 @@ Release:	1
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://www.eduke32.com/
-Source0:	https://dukeworld.com/eduke32/synthesis/latest/eduke32_src_%{svndate}-%{sversion}-b041aee19.tar.xz
+Source0:	https://dukeworld.com/eduke32/synthesis/latest/eduke32_src_%{svndate}-%{sversion}-%{git}.tar.xz
 Source1:	%{name}_32x32.png
 Source2:	%{name}_48x48.png
 Source3:	%{name}_64x64.png
@@ -146,7 +148,7 @@ Eduke32 build tools.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}_%{svndate}-%{sversion}-b041aee19
+%setup -q -n %{name}_%{svndate}-%{sversion}-%{git}
 cp %{SOURCE1} .
 cp %{SOURCE2} .
 cp %{SOURCE3} .
