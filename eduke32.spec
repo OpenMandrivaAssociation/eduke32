@@ -11,7 +11,7 @@ Version:	2.0.4svn%{svndate}
 Release:	1
 License:	GPLv2+
 Group:		Games/Arcade
-Url:		http://www.eduke32.com/
+Url:		https://www.eduke32.com/
 Source0:	https://dukeworld.com/eduke32/synthesis/latest/eduke32_src_%{svndate}-%{sversion}-%{git}.tar.xz
 Source1:	%{name}_32x32.png
 Source2:	%{name}_48x48.png
