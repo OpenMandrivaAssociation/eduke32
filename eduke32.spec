@@ -20,6 +20,7 @@ Source4:	%{name}_128x128.png
 Source5:	%{name}.desktop
 Source6:	%{name}-demo-install.sh
 #Patch0:		eduke32-libpng16.patch
+BuildRequires:	make
 BuildRequires:	nasm
 BuildRequires:	libstdc++-static-devel
 BuildRequires:	atomic-devel
